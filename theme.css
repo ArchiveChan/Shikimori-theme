@@ -1,0 +1,250 @@
+/* Импорты */
+@import url("https://raw.githubusercontent.com/ed-main/ed-main.github.io/master/cssfiles/main_code_1.css");
+@import url("https://raw.githubusercontent.com/ed-main/ed-main.github.io/master/cssfiles/main_code_2.css");
+@import url("https://raw.githubusercontent.com/ed-main/ed-main.github.io/master/cssfiles/main_code_3.css");
+@import url("https://raw.githubusercontent.com/ed-main/ed-main.github.io/master/cssfiles/main_code_4mob.css");
+@import url("https://raw.githubusercontent.com/ed-main/ed-main.github.io/master/cssfiles/prof_form_over.css");
+@import url("https://raw.githubusercontent.com/ed-main/ed-main.github.io/master/cssfiles/q08_alter_sitemenu.css");
+
+/*================================== Анимации ==================================*/
+/* Анимация плавающей аватарки */
+@keyframes flyingavatar {
+from {
+   transform: translateY(0px);
+}
+50% {
+   transform: translateY(-10px);
+}
+to {
+   transform: translateY(0px);
+}
+}
+
+/* Анимация слайда */
+@keyframes slide {
+	0% {width:100%;opacity: 1}
+	5% {width:100%;opacity: 1}
+	86% {width:100%;opacity: 1}
+  	88% {width:100%;opacity: 0}
+	100% {width:100%;opacity: 0}
+}
+
+/*================================== Это база ==================================*/
+/* Фоновое изображение */
+body:after {
+  background-image: url(https://i.imgur.com/CfZ0PDH.png);
+}
+
+/* Цвет и прозрачность основного блока */
+.l-page {
+  background-color: rgba(10, 10, 10, 0.98);
+}
+
+/* Тема? */
+.l-footer:after {
+  content: "*Dark Forest*";
+}
+
+/* Чё-то связанное с мобильной версией? */
+@media screen and (min-width: 1px) {
+  .correct-mob-version {
+    color: inherit;
+  }
+}
+
+/* Шапка профиля? */
+@media screen and (min-width: 1200px) {
+  #profiles_show .profile-head::after {
+    background-image: url(https://i.imgur.com/CfZ0PDH.png);
+  }
+}
+
+/* Цвета */
+@media screen and (min-width: 1px) {
+  html:root {
+    --gif-avatar: url("https://64.media.tumblr.com/1f9eb356973afdc372972953afd37dfe/0bfe3aa7941a7e21-8b/s500x750/3aa80f7c8579c212e1fd7da43fddc1fa55f85a9a.gif"); /* ССылка на гиф-аватар */
+    --white-color: 255, 255, 255; /* Белый цвет текста*/
+    --light-color: 199, 199, 199; /* Светлый цвет текста */
+    --dark-color: 171, 171, 171; /* Тёмный цвет текста */
+    --bright-color: 218, 95, 88; /* Яркий цвет текста и ссылок */
+    --dull-color: 134, 102, 96; /* Тусклый цвет текста */
+    --input-color: 102, 102, 102; /* Фантомный текст в строках ввода */
+    --hover-bottoms-1: 25, 18, 17; /* При наведении на "Загрузить еще" */
+    --buttoms-color: 25, 24, 23; /* Цвет больших кнопок в клубе */
+    --hover-buttoms-2: 156, 25, 25; /* При наведении на кнопки в клубе */
+    --very-high-rating: 202, 29, 0; /* Полоса найвысшего рейтинга */
+    --high-rating: 171, 24, 8; /* Полоса высого рейтинга */
+    --average-rating: 128, 20, 1; /* Полоса среднего рейтинга */
+    --small-rating: 95, 14, 0; /* Полоса низкого рейтинга */
+    --time-filled: 134, 26, 0; /* Полоса пройденного времени */
+    --time-empty: 25, 23, 23; /* Полоса не пройденного времени */
+    --anime-inprocess: 69, 146, 76; /* Полоса запланированного аниме */
+    --anime-complete: 41, 107, 47; /* Полоса просмотренного аниме */
+    --manga-inprocess: 189, 15, 86; /* Полоса запланирвоанной манги */
+    --manga-complete: 153, 0, 62; /* Полоса прочитанной манги */
+    --hover-color: 183, 69, 56; /* Основной цвет при наведении */
+    --shadows-color: 171, 171, 171; /* Цвет подсказок */
+    --block-color: 35, 35, 35; /* Цвет панелей заголовков */
+    --menu-back: 9, 9, 9; /* Основной цвет фона страницы */
+    --nick-cover: 84, 23, 23; /* Очертание никнейма */
+    --popup-color: 53, 27, 14; /* Фон всплывающей информации */
+    --top-menu: 25, 20, 20; /* Верхнее меню */
+    --hundred: 1; /* Кто ты, войн??? */
+    --headline-background-color: 35, 35, 35;  /* Разделы достижений */
+  }
+}
+
+/* Прозрачность и цвет скроллера */
+::-webkit-scrollbar-thumb {
+    background-color: rgba(var(--light-color), 0.1);
+}
+
+/* Скрытие кнопки фидбека */
+.b-feedback {
+   display: none !important;
+}
+
+/*Скрытие Избранное*/
+.p-profiles-show .profile-content .cc-2 > .c-column:last-child > .block {
+   display: none !important;
+}
+
+.p-profiles-show .achievements {
+   visibility: visible !important;
+}
+
+/* Верхнее меню */
+.l-top_menu-v2 {
+  background: rgba(var(--top-menu), 0.9);
+}
+.l-top_menu-v2:hover {
+  background: rgba(var(--top-menu), 0.9);
+  box-shadow: 0 0 10px rgb(var(--top-menu));
+}
+
+/* Гифка-аватарка */
+.p-profiles .profile-head .c-brief .avatar {
+  background: var(--gif-avatar) center / cover;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: 0px 8px 18px 2px rgba(8, 49, 150, 0.05);
+  animation: flyingavatar 4s ease-in-out infinite; /* Применение анимации */
+}
+.p-profiles .profile-head .avatar img {
+  visibility: hidden; /* Прятаем png-аватарку */
+}
+.p-profiles .profile-actions {
+  visibility: hidden; /* Прятаем кнопки */
+}
+
+/* Делает спойлеры в блоке "Обо мне" вертикальными */
+.p-profiles .about.block .b-spoiler label {
+  border: none;
+  display: inline-block !important;
+  font-weight: bold; /* толщина шрифта, можно убрать, если не нужно */
+  color: #000; /* цвет текста спойлера */
+  background: #e8ebef; /* цвет фона спойлера */
+  height: 30px; 
+  width: 100%;
+  font-size: 12pt; /* размер шрифта текста на спойлере */
+  padding-top: 3px; 
+  text-align: center;
+  margin-bottom: 5px;
+}
+.p-profiles .about.block .b-spoiler .after:before, .about.block .b-spoiler .before:before {
+  content: '';
+}
+.p-profiles .about.block .b-spoiler .before {
+  width: 100%; 
+  height: 50px;
+  display: inline-block !important;
+  margin-top: -50px;
+}
+
+/* Аниме/Манга/Ранобэ рядом с пунктами истории */
+.history-page a:before {
+  display: inline-block;
+  vertical-align: top;
+  width: 72px;
+}
+.history-page a[href ^= "/a"]:before {
+  content: '[Аниме] ';
+  color: #34a853;
+}
+.history-page a[href ^= "/m"]:before {
+  content: '[Манга] ';
+  color: #9c27b0;
+}
+.history-page a[href ^= "/r"]:before {
+  content: '[Ранобэ] ';
+  color: #039be5;
+}
+[data-locale="en"] .history-page a[href ^= "/a"]:before {
+  content: '[Anime] ';
+}
+[data-locale="en"] .history-page a[href ^= "/m"]:before {
+  content: '[Manga] ';
+}
+[data-locale="en"] .history-page a[href ^= "/r"]:before {
+  content: '[Ranobe] ';
+}
+
+/* Прогрессбар и сортировка ачивок в профиле */
+@import url(https://raw.githubusercontent.com/kaurkaur/Shikimori/master/CSS/AchivmentStatusbarAndSort.css);
+/* Настройки шаблона */
+:root {
+	--achivment-rename: 'Какие-то классные штуки xD'; /*Переименовываем "достижения"*/
+	--achivment-progressbar-position-b: 6px; /*отступ прогрессбара снизу*/
+	--achivment-progressbar-position-lr: 8px; /*отступ прогрессбара сбоку*/
+	--achivment-progressbar-height: 3px; /*высота прогрессбара*/
+	--achivment-progressbar-border: 1px; /*толщина обводки прогрессбара*/
+	--achivment-margin: 1%; /*отступ между достижениями*/
+	--achivment-sort: -1; /*сортировка ачивок: -1 - от больших к меньшим, 1 - от меньших к большим, 0 - без сортировки*/
+	--achivment-progressbar-bg-color: #fff; /*цвет подложки прогрессбара*/
+} /* Заголовок-ссылка */
+.p-profiles-show .achievements .subheadline a {
+    background-color: rgb(25, 25, 25);
+    border-color: rgba(0, 0, 0, 0);
+  transition: none;
+}
+.p-profiles-show .achievements .subheadline a:hover {
+    background-color: rgb(30, 30, 30);
+    border-color: rgba(0, 0, 0, 0);
+}
+.p-profiles-show .achievements .subheadline a:active {
+    background-color: rgb(27, 27, 27);
+    border-color: rgba(0, 0, 0, 0);
+} /* Текст заголовка-ссылки */
+.p-profiles-show .achievements .subheadline > a::before,
+.p-profiles-show .achievements .subheadline > a:hover::before,
+.p-profiles-show .achievements .subheadline > a:focus::before,
+.p-profiles-show .achievements .subheadline > a:active::before {
+	font-family: var(--font-alt);
+	letter-spacing: normal;
+	content: var(--achivment-rename);
+	color: --white-color;
+	text-transform: inherit;
+	position: static;
+	right: auto;
+	font-size: 15px;
+} /* Офаем фон у текста заголовка-гиперссылки */
+.headline > a:before, .midheadline > a:before, .subheadline > a:before {
+    background: none  !important;
+}
+
+/* Текст под ником */
+.p-profiles header.head:after {  
+  content: "process is running";
+}
+
+/* Подсветка блоков */
+.l-page .profile-content .about.block .b-spoiler_block .cc-6-g0 .c-column > a .image-decor .image-cutter:hover {
+  box-shadow: 0 0 10px rgb(var(--nick-cover));
+}
+
+/* Приколюшка для страницы турниров, в блоке "УСЛОВИЯ ТУРНИРА" */
+.p-contests.p-contests-show.x1200 .l-page .menu-slide-outer.x199 .menu-slide-inner .l-menu .b-contests-menu .block:nth-child(3) > p:after {
+  content: ". Надежная, как часы.";
+}
