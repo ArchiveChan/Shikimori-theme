@@ -42,7 +42,7 @@ body:after {
 
 /* Тема? */
 .l-footer:after {
-  content: "*Dark Forest*";
+  content: "Modified by ArchiveChan   UwU";
 }
 
 /* Чё-то связанное с мобильной версией? */
@@ -96,21 +96,30 @@ body:after {
 
 /* Прозрачность и цвет скроллера */
 ::-webkit-scrollbar-thumb {
-    background-color: rgba(var(--light-color), 0.1);
+  background-color: rgba(var(--light-color), 0.1);
 }
 
 /* Скрытие кнопки фидбека */
 .b-feedback {
-   display: none !important;
+  display: none !important;
 }
 
 /*Скрытие Избранное*/
 .p-profiles-show .profile-content .cc-2 > .c-column:last-child > .block {
-   display: none !important;
+  display: none !important;
 }
 
 .p-profiles-show .achievements {
-   visibility: visible !important;
+  visibility: visible !important;
+}
+
+.p-profiles-show .cc-friends .b-nothing_here {
+  visibility: hidden !important;
+}
+.p-profiles-show .cc-friends .b-nothing_here::after {
+  content: "Шиза 1, Шиза 2, Шиза 3...";
+  visibility: visible !important;
+
 }
 
 /* Верхнее меню */
@@ -139,6 +148,11 @@ body:after {
   visibility: hidden; /* Прятаем кнопки */
 }
 
+/* Фикс скругления img */
+.profile.about.block img {
+    border-radius: 0%;
+}
+
 /* Делает спойлеры в блоке "Обо мне" вертикальными */
 .p-profiles .about.block .b-spoiler label {
   border: none;
@@ -161,6 +175,74 @@ body:after {
   height: 50px;
   display: inline-block !important;
   margin-top: -50px;
+}
+
+/* Обо мне | Что-то похожее на "сущность каталога" Shikimori для добавления кастомных */
+/* Определяем ширину элмента при определенной ширине экрана */
+@media screen and (min-width: 150px) {.ns-entry {width: calc(92% / 1) !important;}}
+@media screen and (min-width: 250px) {.ns-entry {width: calc(92% / 2) !important;}}
+@media screen and (min-width: 300px) {.ns-entry {width: calc(92% / 3) !important;}}
+@media screen and (min-width: 400px) {.ns-entry {width: calc(92% / 4) !important;}}
+@media screen and (min-width: 550px) {.ns-entry {width: calc(92% / 5) !important;}}
+@media screen and (min-width: 767px) {.ns-entry {width: calc(92% / 6) !important;}}
+@media screen and (min-width: 850px) {.ns-entry {width: calc(92% / 7) !important;}}
+@media screen and (min-width: 925px) {.ns-entry {width: calc(92% / 8) !important;}}
+@media screen and (min-width: 1200px) {.ns-entry {width: calc(92% / 9) !important;}}
+@media screen and (min-width: 1450px) {.ns-entry {width: calc(92% / 10) !important;}}
+/* Блок сущности */
+.ns-entry {
+  margin: 5px 5px 1rem;
+  padding: 5px;
+  border-radius: 0.7rem;
+  pointer-events: all;
+  background: linear-gradient(transparent 0 , rgba(var(--block-color), 0.25)) !important;
+  box-shadow: 0 2px 6px 2px #00000030;
+  -webkit-transition: box-shadow 0.25s ease;
+  text-align: center;
+  display: inline-block;
+} /* Блок сущности при наведении */
+.ns-entry:hover {
+  border-radius: 0.6rem;
+  background: linear-gradient(transparent 0 , rgba(var(--block-color), 0.35)) !important;
+  box-shadow: none;
+  background: none;
+  border: none;
+  opacity: 1;
+  transform: scale(1.005);
+} /* финт ушами с картинками */
+.ns-entry img {
+  border-radius: 5%;
+  z-index: 10;
+} /* Элемент подсказки */
+.ns-tip {
+  visibility: hidden;
+  width: 100%;
+  height: 60%;
+  background-color: rgba(0,0,0,0.7);
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 9;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -50%;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.ns-tip::after {
+  content: "";
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+} /* При наведении на блок сущности изменяем подсказку */
+.ns-entry:hover .ns-tip {
+  visibility: visible;
+  opacity: 1;
+  transform: translate(0%, 145%);
 }
 
 /* Аниме/Манга/Ранобэ рядом с пунктами истории */
@@ -233,6 +315,9 @@ body:after {
 .headline > a:before, .midheadline > a:before, .subheadline > a:before {
     background: none  !important;
 }
+.p-profiles .cc-2 {
+  margin-bottom: 15px;
+}
 
 /* Текст под ником */
 .p-profiles header.head:after {  
@@ -247,4 +332,9 @@ body:after {
 /* Приколюшка для страницы турниров, в блоке "УСЛОВИЯ ТУРНИРА" */
 .p-contests.p-contests-show.x1200 .l-page .menu-slide-outer.x199 .menu-slide-inner .l-menu .b-contests-menu .block:nth-child(3) > p:after {
   content: ". Надежная, как часы.";
+}
+
+/* Выключаю бегущую строку в Профиль/История */
+.p-profiles .profile-head .c-history .entry .title {
+  animation: none;
 }
